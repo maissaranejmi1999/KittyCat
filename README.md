@@ -19,6 +19,22 @@ Licensing
 Introduction:
 KittyCat is a web application designed to connect people with cats in need of adoption. Users can browse available cats, post their own cats for adoption, and manage adoption requests. Built with Django and PostgreSQL, KittyCat aims to make the adoption process seamless and user-friendly.
 
+
+
+
+Inspiration and Story
+The inspiration behind KittyCat came from my husband who knows my passion for animals and my vision to leverage technology for social good. I wanted to create a platform where people could effortlessly browse, list, and request adoption for cats, reducing the stress often associated with the adoption process.
+
+Challenges Faced
+Technical Hurdles: Navigating Django’s form handling and integrating PostgreSQL posed initial challenges. Adapting the design to work across different devices and ensuring a seamless user experience were also key hurdles.
+Learning Curve: As someone new to full-stack development, mastering Django’s intricacies and managing the database with PostgreSQL required significant learning and experimentation.
+Technical Approach
+Django & PostgreSQL: Chose Django for its robust framework and PostgreSQL for its advanced features and scalability.
+User Interaction: Focused on creating a smooth user flow from signing in to managing cat adoption requests, ensuring all functionalities are easily accessible.
+
+
+
+
 Deployed Site: https://maissaranejmi1999.github.io/landing-page/
 Final Project Blog Article: Read the Blog Article
 Author: https://www.linkedin.com/in/maissara-nejmi/
