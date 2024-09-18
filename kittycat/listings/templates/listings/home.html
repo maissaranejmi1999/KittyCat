@@ -1,0 +1,85 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo:wght@400;600&display=swap">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KittyCat - Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/hstyles.css' %}">
+</head>
+<body class="home-page">
+    <div class="wrapper">
+        <header class="header">
+            <div class="logo">
+                <h1>KittyCat</h1>
+            </div>
+            <div class="header-content">
+                <nav>
+
+                    <ul>
+                        {% if user.is_authenticated %}
+                        <!-- Display user-related options -->
+                            
+                            <li><a class="button" href="{% url 'search' %}">Search</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle">Menu</a>
+                                <div class="dropdown-content">
+                                    <a class="button" href="{% url 'available_cats' %}">Available Cats</a>
+                                    <a class="button" href="{% url 'my_posted_cats' %}">My Posted Cats</a>
+                                    <a class="button" href="{% url 'put_cat_for_adoption' %}">Put Cat For Adoption</a>
+                                    <a class="button" href="{% url 'my_cat_requests' %}">My Cat Requests</a>
+                                    <a class="button" href="{% url 'received_requests' %}">Received Requests</a>
+                                    <form action="{% url 'logout' %}" method="post">
+                                        {% csrf_token %}
+                                        <button type="submit" class="button">Logout</button>
+                                    </form>
+                                </div>
+                            </li>
+                        {% else %}
+                        <!-- Display sign-up and sign-in options -->
+                            <li><a class="button" href="{% url 'available_cats' %}">Available Cats</a></li>
+                            <li><a class="button" href="{% url 'search' %}">Search</a></li>
+                            <li><a class="button" href="{% url 'login' %}">Sign In</a></li>
+                            <li><a class="button" href="{% url 'join_us' %}">Join Us</a></li>
+    
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+
+        </header>
+        
+        <main>
+            <section class="welcome">
+                <h1>Welcome to KittyCat!</h1>
+                <p>Find your new feline friend</p>
+            </section>
+        </main>
+        
+
+    </div>
+    <!-- Display website info -->
+    <section class="info">
+        <div class="info-box">
+            <h2>About Us</h2>
+            <p>KittyCat is dedicated to helping you find your next furry companion. Our platform provides detailed profiles and easy search options for cat adoption.</p>
+        </div>
+        <div class="info-box">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need assistance, feel free to reach out to us at <a href="mailto:info@kittycat.com">info@kittycat.com</a>.</p>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 KittyCat. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+
+
+

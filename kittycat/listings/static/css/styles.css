@@ -1,0 +1,386 @@
+/* Ensure full height of viewport */
+html, body {
+    height: 100%; /* Ensure full height of the viewport */
+    margin: 0; /* Remove default margin */
+    font-family: 'Baloo', sans-serif; /* Font family for the page */
+    display: flex; /* Flexbox layout for body */
+    flex-direction: column; /* Arrange items vertically */
+    min-height: 100vh; /* Full height of the viewport */
+}
+
+/* Wrapper takes full height and positions elements */
+.wrapper, .available-cats {
+    display: flex; /* Flexbox layout for wrapper */
+    flex-direction: column; /* Arrange elements vertically */
+    min-height: 100vh; /* Full viewport height */
+}
+
+/* Header styling */
+.header {
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Align content on opposite sides */
+    align-items: center; /* Vertically center the content */
+    padding: 10px 20px; /* Adjust padding for spacing */
+    background-color: #b49db3; /* Example background color */
+}
+
+.logo h1 {
+    color: #ffffff;
+    margin: 0; /* Remove default margin from h1 */
+    font-size: 50px; /* Adjust size */
+    font-weight: bold; /* Style the logo text */
+}
+
+.header-content {
+    display: flex; /* Flexbox layout for header content */
+    align-items: center; /* Vertically center the content */
+    gap: 20px; /* Add space between items */
+    flex-wrap: wrap;
+}
+
+.dropdown {
+    float: right;
+    position: relative;
+    color: #b49db3;
+    border-radius: 8px;
+}
+
+.dropdown-toggle {
+    background-color: #b49db3; /* Button background color */
+    color: white; /* Button text color */
+    border: 2px solid white;
+    border-radius: 8px; /* Rounded corners */
+    padding: 14px 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style for the dropdown menu when hovered */
+.dropdown-toggle:hover {
+    background-color: white; /* Background color on hover */
+    color: #b49db3; /* Text color on hover */
+    border-color: #b49db3; /* Border color on hover */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #b49db3; /* Background color */
+    min-width: 240px; /* Minimum width */
+    z-index: 1;
+    border-radius: 8px; /* Rounded corners */
+    border: 2px solid white; /* White border */
+    text-align: center;
+    
+}
+
+.dropdown-content a {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content form {
+    display: block;
+    background: #ffffff;
+    border: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center; /* Center content horizontally */
+    align-items: center;
+    border-radius: 3px;
+    border: 2px solid #b49db3;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Makes the list items horizontal */
+    justify-content: flex-end; /* Pushes the items to the right */
+    align-items: center; /* Centers the items vertically */
+    margin: 0;
+    flex-grow: 1; /* Allows the nav to take up the full width */
+}
+
+
+
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Main content styling */
+main {
+    flex: 1; /* Take up remaining space */
+    flex-grow: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Welcome section styling */
+.welcome {
+    margin-bottom: 20px;
+    color: #b49db3;
+    font-size: 2em; /* Adjust this value to make the text larger */
+    text-align: center; /* Align text to the right */
+    padding: 0 60px; /* Add some padding to avoid text touching the edges */
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
+}
+
+
+.join-us {
+    margin-bottom: 20px;
+    color: #b49db3;
+    font-size: 1.5em; /* Adjust the font size */
+    text-align: center;
+    padding: 0 60px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.join-us form {
+    color: #b49db3; /* Apply the color to the form text */
+}
+
+.join-us input[type="text"], 
+.join-us input[type="email"], 
+.join-us input[type="password"], 
+.join-us select, 
+.join-us textarea {
+    border: 2px solid #b49db3; /* Border color */
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333; /* Text color inside inputs */
+    width: 100%;
+}
+
+
+.messages {
+    margin-bottom: 20px;
+    color: #b49db3;
+    font-size: 2em; /* Adjust this value to make the text larger */
+    text-align: right; /* Align text to the right */
+    padding: 0 60px; /* Add some padding to avoid text touching the edges */
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
+}
+
+
+.cat-list img, .search-result img {
+    width: 250px; /* or any fixed width */
+    height: 200px; /* or any fixed height */
+    object-fit: cover; /* Crop the image to fit the dimensions */
+    border-radius: 8px;
+}
+
+
+.cat-img {
+    max-width: 150px; /* Adjust to the desired maximum width */
+    max-height: 150px; /* Adjust to the desired maximum height */
+    width: auto;
+    height: auto;
+    display: block; /* Ensures that the image is displayed as a block element */
+    margin-bottom: 10px; /* Adds some space below the image */
+}
+
+
+.available-cats {
+    margin-bottom: 20px;
+    color: #b49db3;
+    font-size: 2em; /* Adjust this value to make the text larger */
+    text-align: right; /* Align text to the right */
+    padding: 0 60px; /* Add some padding to avoid text touching the edges */
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
+}
+
+.cat-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center items horizontally */
+    gap: 20px; /* Optional: space between items */
+    
+}
+
+
+
+
+
+
+.cat-item, .search-result {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.219);
+    text-align: center;
+    padding: 10px; /* Optional: add padding */
+    width: 300px; /* Optional: set a fixed width */
+    color: #b49db3;
+}
+
+.request-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.219);
+    text-align: center;
+    padding: 10px; /* Optional: add padding */
+    width: 300px; /* Optional: set a fixed width */
+    color: #b49db3;
+}
+
+
+
+.hello {
+    margin-bottom: 40px;
+    margin-top: -40px; /* Move the entire box up */
+    color: #b49db3;
+    font-size: 2em; /* Adjust this value to make the text larger */
+    text-align: center; /* Align text to the right */
+    padding: 0 40px; /* Add some padding to avoid text touching the edges */
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Optional: Subtle shadow */
+}
+
+/* Info section styling */
+.info {
+    color: #b49db3;
+    display: flex; /* Use Flexbox to arrange children side by side */
+    justify-content: space-between; /* Space between items */
+    gap: 20px; /* Optional: Adds spacing between the two boxes */
+    margin: 20px 0; /* Adjust as needed */
+    text-align: center;
+}
+
+/* Info box styling */
+.info-box {
+    flex: 1; /* Makes each box take up an equal amount of space */
+    padding: 20px; /* Adds padding inside each box */
+    background-color: #f8f9fa; /* Optional: Background color for the boxes */
+    border-radius: 8px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 8px #b49db3(0, 0, 0, 0.1); /* Optional: Subtle shadow */
+    margin-bottom: 230px;
+    margin-top: -230px; /* Move the entire box up */
+}
+
+.info-box h2 {
+    margin-top: 0; /* Remove top margin from the heading */
+}
+
+.info-box p {
+    margin-bottom: 0; /* Remove bottom margin from the paragraph */
+}
+
+/* Footer styling */
+
+footer {
+    background-color: #b49db3;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    flex-shrink: 0; /* Ensure footer stays at the bottom */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Button styling */
+.button {
+    display: inline-block;
+    padding: 10px 20px;  /* Adjust padding to size the button */
+    margin: 5px;         /* Spacing between buttons */
+    border: 2px solid #b49db3;  /* Border color */
+    border-radius: 50px; /* Fully rounded border (bubble-like) */
+    background-color: #b49db3; /* Button background color */
+    color: white;        /* Text color */
+    text-align: center;  /* Center text */
+    font-size: 16px;     /* Font size */
+    font-weight: bold;   /* Make text bold */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+.button:hover {
+    background-color: white;  /* Background color on hover */
+    color: #b49db3;           /* Text color on hover */
+    border-color: #b49db3;    /* Border color on hover */
+}
+
+/* Form Container */
+.form-container {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 100px;
+    background-color: #f8f9fa; /* Light background for the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-bottom: 30px;
+    margin-top: -30px; /* Move the entire box up */
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Form Label */
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Form Input and Textarea */
+.form-control {
+    width: 50%;
+    padding: 10px;
+    border: 2px solid #dfcbde; /* Match button border color */
+    border-radius: 50px; /* Match button border radius */
+    font-size: 16px;
+    font-family: 'Baloo', sans-serif; /* Consistent font */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    background-color: #dfcbde; /* Match button background color */
+    color: white; /* Match button text color */
+}
+
+/* Form Input Focus */
+.form-control:focus {
+    border-color: white; /* Match button hover border color */
+    background-color: white; /* Match button hover background color */
+    color: #dfcbde; /* Match button hover text color */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(223, 203, 222, 0.5); /* Subtle focus shadow */
+}
+
+/* Button */
+.button {
+    display: inline-block;
+    padding: 10px 20px;  /* Adjust padding to size the button */
+    margin: 5px;         /* Spacing between buttons */
+    border: 2px solid #b49db3;  /* Border color */
+    border-radius: 50px; /* Fully rounded border (bubble-like) */
+    background-color: #b49db3; /* Button background color */
+    color: white;        /* Text color */
+    text-align: center;  /* Center text */
+    font-size: 16px;     /* Font size */
+    font-weight: bold;   /* Make text bold */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+/* Button Hover */
+.button:hover {
+    background-color: white;  /* Background color on hover */
+    color: #b49db3;           /* Text color on hover */
+    border-color: #b49db3;    /* Border color on hover */
+}
+
+

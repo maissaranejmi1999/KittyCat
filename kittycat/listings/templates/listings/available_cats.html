@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo:wght@400;600&display=swap">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Cats - KittyCat</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="logo">
+                <h1><a href="{% url 'home' %}">KittyCat</a></h1>
+            </div>
+            <div class="header-content">
+                <nav>
+
+                    <ul>
+                        {% if user.is_authenticated %}
+                        <!-- Display user-related options -->
+                            
+                            <li><a class="button" href="{% url 'search' %}">Search</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle">Menu</a>
+                                <div class="dropdown-content">
+                                    <a class="button" href="{% url 'my_posted_cats' %}">My Posted Cats</a>
+                                    <a class="button" href="{% url 'put_cat_for_adoption' %}">Put Cat For Adoption</a>
+                                    <a class="button" href="{% url 'my_cat_requests' %}">My Cat Requests</a>
+                                    <a class="button" href="{% url 'received_requests' %}">Received Requests</a>
+                                    <form action="{% url 'logout' %}" method="post">
+                                        {% csrf_token %}
+                                        <button type="submit" class="button">Logout</button>
+                                    </form>
+                                </div>
+                            </li>
+                        {% else %}
+                        <!-- Display sign-up and sign-in options -->
+                            <li><a class="button" href="{% url 'home' %}">Home</a></li>
+                            <li><a class="button" href="{% url 'search' %}">Search</a></li>
+                            <li><a class="button" href="{% url 'login' %}">Sign In</a></li>
+                            <li><a class="button" href="{% url 'join_us' %}">Join Us</a></li>
+    
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+
+        </header>
+        
+        <main>
+            <section class="search-results">
+                <section class="welcome">
+                    {% if user.is_authenticated %}
+                        <h1>Available Cats For You</h1>
+                    {% else %}
+                        <h1>Available Cats for Adoption</h1>
+                    {% endif %}
+                </section>
+                
+                <div class="cat-list">
+                    <!-- Display the list of availible cats -->
+                    {% for cat in cats %}
+                    <div class="cat-item">
+                        <h2>{{ cat.name }}</h2>
+                        <img src="{{ cat.image1.url }}" alt="{{ cat.name }}">
+                        <p>Age: {{ cat.age }} years</p>
+
+                        <a href="{% url 'cat_profile' cat.cat_id %}" class="button">View Profile</a>
+                    </div>
+                    {% empty %}
+                    <!-- Display in case of no availible cats -->
+                    <section class="welcome">
+                        <p>No cats available at the moment.</p>
+                    </section>
+                    {% endfor %}
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 KittyCat. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
